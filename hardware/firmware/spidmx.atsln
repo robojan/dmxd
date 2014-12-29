@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "spidmx", "spidmx.cproj", "{2A3DCF1C-FB0B-4957-8042-F86842F7A1CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A3DCF1C-FB0B-4957-8042-F86842F7A1CF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{2A3DCF1C-FB0B-4957-8042-F86842F7A1CF}.Debug|AVR.Build.0 = Debug|AVR
+		{2A3DCF1C-FB0B-4957-8042-F86842F7A1CF}.Release|AVR.ActiveCfg = Release|AVR
+		{2A3DCF1C-FB0B-4957-8042-F86842F7A1CF}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

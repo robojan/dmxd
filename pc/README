@@ -1,0 +1,56 @@
+###########################################
+###                DMXD                 ###
+###########################################
+
+1. Introduction
+DMXD is a dmx daemon developed to be the pc side server for an spi-dmx converter.
+For more information about the spi-dmx converter look on my website: http://www.robojan.nl
+
+Dmxd creates an Art-Net Node service on the network. The node listens to Art-Net messages 
+broadcasted to the network.
+
+2. Requirements
+To compile dmxd the following libraries must be present on the system
+- wiringpi (http://wiringpi.com/)
+- libartnet (https://www.openlighting.org/libartnet-main/)
+
+3. Compiling and install
+To compile dmxd the following commands must be executed
+$ make
+$ sudo make install
+
+The make install command copies the binary to /usr/bin and the configuration file to /etc
+Also the makefile assumes that systemd is used and copies the service file to /usr/lib/systemd/system
+It is possible to change the location of the files in the makefile
+To uninstall dmxd run $ sudo make uninstall
+
+4. Configuration
+This is the default configuration file:
+#
+# DMX daemon configuration file
+#
+
+########## SPI settings ##########
+# The SPI port number. (0 or 1)
+SPIPort = 0
+
+# The SPI port speed in kHz. 
+SPISpeed = 60
+
+# The user that is used for the dmx communication
+SPIUser = root
+
+########## Server settings ##########
+# The user that is used for the server communication
+ServerUser = http
+# Initial state of channels(on, off)
+InitialState = on
+
+########## Art-Net settings ##########
+# The IP address that Art-Net binds to, Change this to your host ip address
+ArtNetIp = 0.0.0.0
+# The Long name for the Art-Net node(max 63 characters)
+ArtNetLongName = SPI-DMX Art-Net daemon http://www.robojan.nl
+# The short name for the Art-Net node(max 17 characters)
+ArtNetShortName = SPI-DMX daemon
+
