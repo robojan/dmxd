@@ -1,4 +1,4 @@
-The MIT License (MIT)
+/*The MIT License (MIT)
 
 Copyright (c) 2015 Robbert-Jan de Jager
 
@@ -18,4 +18,16 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+THE SOFTWARE.*/
+
+
+#ifndef _STRINGHELPER_H_
+#define _STRINGHELPER_H_
+
+#include <string>
+
+std::string TrimString(std::string str, const char *s);
+std::string ToLower(std::string str);
+std::string ToUpper(std::string str);
+
+#endif

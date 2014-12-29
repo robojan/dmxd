@@ -1,4 +1,4 @@
-The MIT License (MIT)
+/*The MIT License (MIT)
 
 Copyright (c) 2015 Robbert-Jan de Jager
 
@@ -18,4 +18,31 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+THE SOFTWARE.*/
+#include <cassert>
+#include <algorithm>
+#include "stringhelper.h"
+
+std::string TrimString(std::string str, const char *s)
+{
+	assert(s != NULL);
+	size_t pos = str.find_first_not_of(s);
+	if(pos != std::string::npos)
+		str = str.substr(pos);
+	pos = str.find_last_not_of(s);
+	if(pos != std::string::npos)
+		str = str.substr(0, pos+1);
+	return str;
+}
+
+std::string ToLower(std::string str)
+{
+	std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+	return str;
+}
+
+std::string ToUpper(std::string str)
+{
+	std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+	return str;
+}

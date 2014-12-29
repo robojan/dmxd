@@ -1,4 +1,4 @@
-The MIT License (MIT)
+/*The MIT License (MIT)
 
 Copyright (c) 2015 Robbert-Jan de Jager
 
@@ -18,4 +18,28 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+THE SOFTWARE.*/
+#ifndef _MESSAGES_H_
+#define _MESSAGES_H_
+
+#include "ipc.h"
+
+IPCMessage *GetInfoMessage();
+IPCMessage *GetInfoResponse(int channels);
+IPCMessage *GetChannelsMessage();
+IPCMessage *GetChannelsResponse(int count, uint8_t *values);
+IPCMessage *SetChannelsMessage(int address, int count, const uint8_t *values);
+IPCMessage *SetChannelMessage(int address, uint8_t value);
+IPCMessage *SetAllMessage(uint8_t value);
+
+enum MessageTypes {
+	MSG_GETINFO,
+	MSG_GETINFORESPONSE,
+	MSG_GETCHANNELS,
+	MSG_GETCHANNELSRESPONSE,
+	MSG_SETCHANNELS,
+	MSG_SETCHANNEL,
+	MSG_SETALL,
+};
+
+#endif

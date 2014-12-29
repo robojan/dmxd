@@ -1,0 +1,12 @@
+[Unit]
+Description=An Art-Net DMX server.
+After=syslog.target network.target
+
+[Service]
+Type = forking
+ExecStart=/usr/bin/dmxd -f /etc/dmxd.conf
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
